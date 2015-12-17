@@ -115,7 +115,7 @@ console.log(accumulator());
 functions are functions that either take another function as the input or return a function as
 the output.**
 
-####Pure functions
+####Pure functions      
 **Pure functions return a value computed using only the inputs passed to it. Outside variables and global states may not be used and there may be no side effects.**  
 ```js
 // function that prints a message to the center of the screen
@@ -145,7 +145,7 @@ document.body.appendChild(printSomewhere('hello world',
     window.innerHeight / 2) + 10 + "px", window.innerWidth / 2) + 10 + "px"
 ));
 ```
-####Anonymous functions
+####Anonymous functions    
 ```js
 function powersOf(x) {
     return function (y) {
@@ -158,3 +158,31 @@ console.log(powerOfTwo(1)); // 2
 console.log(powerOfTwo(2)); // 4
 console.log(powerOfTwo(3)); // 8
 ```
+####Method chains- Builder Pattern  
+```js
+//	Instead	of	applying	the	functions	one	per	line...
+var arr = [1, 2, 3, 4],
+    arr1 = arr.reverse(),
+    arr2 = arr1.concat([5, 6]),
+    arr3 = arr2.map(Math.sqrt);
+//	...they	can	be	chained	together	into	a	one-liner
+console.log([1, 2, 3, 4].reverse().concat([5, 6]).map(Math.sqrt));
+//	parentheses	may	be	used	to	illustrate
+console.log(
+    (
+        (
+            ([1, 2, 3, 4]).reverse()
+        ).concat([5, 6])
+    ).map(Math.sqrt)
+);
+```
+####How to create s builder
+**Return an array in javascript**   
+```js
+Array.prototype.zip = function(arr2) {
+  // ...
+}
+This would allow us to the following:
+arr.zip([11,12,13,14).map(function(n){return n*2});
+```
+
