@@ -63,8 +63,8 @@ var varmerge2dArrayIntoOne2 = function(arrays) {
 ```
 ####Is JavaScript a functional programming language?
 **What defines a functional programming language?**   
-1.  A functional programming language is a language which enables programming in a functional style with higher order functions 
-2.  A functional programming language is a language with first class functions  
+1.  A functional programming language is a language which enables programming in a functional style with higher order functions   
+2.  A functional programming language is a language with first class functions    
 3.  A functional programming language is a language with lambdas    
 **Final:** A functional programming language is a language where you program only with pure functions and immutable data (no side effects)  
 Reference: https://clojurefun.wordpress.com/2012/08/27/what-defines-a-functional-programming-language/  
