@@ -7,17 +7,15 @@
 6. Method chains  
 7. Recursion   
 8. Divide and conquer   
-9. Lazy evaluation   
-10.   The functional programmer’s toolkit 
-   a) Callbacks   
-   b) Array.prototype.map()   
-   c) Array.prototype.filter()   
-   d) Array.prototype.reduce()   
-   e) Array.prototype.forEach 
-   f) Array.prototype.concat  
-   g) Array.prototype.reverse 
-   h) Array.prototype.sort 
-   i) Array.prototype.every and Array.prototype.some  
+9. The functional programmer’s toolkit 
+   a) Array.prototype.map()   
+   b) Array.prototype.filter()   
+   c) Array.prototype.reduce()   
+   d) Array.prototype.forEach 
+   e) Array.prototype.concat  
+   f) Array.prototype.reverse 
+   g) Array.prototype.sort 
+   h) Array.prototype.every and Array.prototype.some  
 
 ##Introduction
 ####Benefits:
@@ -245,3 +243,69 @@ function gcd(a, b) {
 console.log(gcd(12, 8));
 console.log(gcd(100, 20));
 ```
+####The functional programmer’s toolkit   
+```js
+/**
+ * [array] ==>{function(callback)} ==> [array]
+ */
+```
+a) **Array.prototype.map()**  
+```js
+/*
+ *Problem: Capitalize first character of word in a sentence
+ */
+var str = 'hello world how ya doing?';
+// Capitalize first character of word in a string.
+console.log(
+    str.split(' ').map(function (s, i) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
+    }).join(' ')
+);
+```
+b) **Array.prototype.filter()**  
+```js
+/*
+ *Problem: Collect only valid emails
+ */
+var emails = [
+    'deepak@gmail.com',
+    'deepak@gmail.c',
+    'deepak1@gmail.co',
+    'deepak*@gmail.com',
+    'deepak+abc@gmail.in',
+];
+var emailReg = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
+console.log(
+    emails.filter(function (s, i) {
+       return emailReg.test(s);
+    })
+);
+```
+c) **Array.prototype.reduce()**  
+```js
+/*
+ *Problem: Find greatest among the given numbers
+ */
+var numbers = [1, 252, 56, 3636, 8, 1, -1];
+
+console.log(
+    numbers.reduce(function (p, n) {
+        return Math.max(p, n);
+    })
+);
+/*
+ *Problem: Highest paid employee
+ */
+var employees = [
+    {name: 'deepak', salary: 1000, id: '1'},
+    {name: 'sanjay', salary: 1001, id: '2'},
+    {name: 'deepak', salary: 999, id: '3'}
+];
+
+console.log(
+    employees.reduce(function (p, n) {
+        return p.salary > n.salary ? p : n;
+    })
+);
+```
+
