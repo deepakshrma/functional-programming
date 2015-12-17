@@ -308,4 +308,11 @@ console.log(
     })
 );
 ```
+d)  Array.prototype.forEach  
+e)  Array.prototype.concat  
+f)  Array.prototype.reverse 
+g)  Array.prototype.sort    
+h)  Array.prototype.every and Array.prototype.some  
+
+
 
