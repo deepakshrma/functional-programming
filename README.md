@@ -114,3 +114,47 @@ console.log(accumulator());
 **Self-invoking functions are actually a form of higher-order functions. Higher-order
 functions are functions that either take another function as the input or return a function as
 the output.**
+
+####Pure functions
+**Pure functions return a value computed using only the inputs passed to it. Outside variables and global states may not be used and there may be no side effects.**  
+```js
+// function that prints a message to the center of the screen
+var printCenter = function (str) {
+    var elem = document.createElement("div");
+    elem.textContent = str;
+    elem.style.position = 'absolute';
+    elem.style.top = window.innerHeight / 2 + "px";
+    elem.style['font-size'] = 50 + "px";
+    elem.style.color = "#f00";
+    elem.style.left = window.innerWidth / 2 + "px";
+    document.body.appendChild(elem);
+};
+printCenter('hello world');
+```
+```js
+// pure function that accomplishes the same thing
+var printSomewhere = function (str, height, width) {
+    var elem = document.createElement("div");
+    elem.textContent = str;
+    elem.style.position = 'absolute';
+    elem.style.top = height;
+    elem.style.left = width;
+    return elem;
+};
+document.body.appendChild(printSomewhere('hello world',
+    window.innerHeight / 2) + 10 + "px", window.innerWidth / 2) + 10 + "px"
+));
+```
+####Anonymous functions
+```js
+function powersOf(x) {
+    return function (y) {
+        // this is an anonymous function!
+        return Math.pow(x, y);
+    };
+}
+powerOfTwo = powersOf(2);
+console.log(powerOfTwo(1)); // 2
+console.log(powerOfTwo(2)); // 4
+console.log(powerOfTwo(3)); // 8
+```
