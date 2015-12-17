@@ -217,4 +217,31 @@ console.log(
     })
 );
 ```
-
+####Recursion
+```js
+var getLeafs = function (node) {
+    if (node.childNodes.length == 0) {
+        //	base	case
+        return node.innerText;
+    }
+    else {
+        //	recursive	case:
+        return node.childNodes.map(getLeafs);
+    }
+}
+```
+####Divide and conquer
+```js
+function gcd(a, b) {
+    if (b == 0) {
+        //	base	case	(conquer)
+        return a;
+    }
+    else {
+        //	recursive	case	(divide)
+        return gcd(b, a % b);
+    }
+}
+console.log(gcd(12, 8));
+console.log(gcd(100, 20));
+```
