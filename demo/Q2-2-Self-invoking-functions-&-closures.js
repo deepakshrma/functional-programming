@@ -1,10 +1,18 @@
 /*
  * Solution 1: Secure values to be modify
  * */
+
+//Design pattern to follow
+var module = (function () {
+    //private
+    return {
+        //public
+    }
+}());
+
 var
     obj1 = {value: 1},
-    obj2 = {value: 2},
-    obj3 = {value: 3};
+    obj2 = {value: 2};
 var ValueAccumulator = function (values, object) {
     var values = [];
     var accumulate = function (obj) {

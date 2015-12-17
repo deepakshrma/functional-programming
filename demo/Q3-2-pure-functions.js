@@ -7,9 +7,9 @@ var printSomewhere = function (str, height, width) {
     elem.style.left = width;
     return elem;
 };
-document.body.appendChild(printSomewhere('hello world',
-    window.innerHeight / 2) + 10 + "px", window.innerWidth / 2) + 10 + "px"
-)
-)
-;
+document.body.appendChild(
+    printSomewhere(
+        'hello world',
+        (window.innerHeight / 2) + 10 + "px",
+        (window.innerWidth / 2) + 10 + "px"));
 

@@ -106,21 +106,30 @@ console.log(values); // Output: [obj1.value, obj2.value]
 ####Self-invoking functions and closures
 ```js
 /*
-* Solution 1: Secure values to be modify
-* */
-var obj1 = {value: 1}, obj2 = {value: 2}, obj3 = {value: 3};
-var ValueAccumulator = function () {
-   var values = [];
-   var accumulate = function (obj) {
-       if (obj) {
-           values.push(obj.value);
-           return values;
-       }
-       else {
-           return values;
-       }
-   };
-   return accumulate;
+ * Solution 1: Secure values to be modify
+ * */
+//Design pattern to follow
+var module = (function () {
+    //private
+    return {
+        //public
+    }
+}());
+var
+    obj1 = {value: 1},
+    obj2 = {value: 2};
+var ValueAccumulator = function (values, object) {
+    var values = [];
+    var accumulate = function (obj) {
+        if (obj) {
+            values.push(obj.value);
+            return values;
+        }
+        else {
+            return values;
+        }
+    };
+    return accumulate;
 };
 //This allows us to do this:
 var accumulator = ValueAccumulator();
@@ -160,9 +169,11 @@ var printSomewhere = function (str, height, width) {
     elem.style.left = width;
     return elem;
 };
-document.body.appendChild(printSomewhere('hello world',
-    window.innerHeight / 2) + 10 + "px", window.innerWidth / 2) + 10 + "px"
-));
+document.body.appendChild(
+    printSomewhere(
+        'hello world',
+        (window.innerHeight / 2) + 10 + "px",
+        (window.innerWidth / 2) + 10 + "px"));
 ```
 ####Anonymous functions    
 ```js
@@ -230,6 +241,9 @@ var getLeafs = function (node) {
 ```
 ####Divide and conquer
 ```js
+/*
+ *Problem: Find GCD among numbers
+ */
 function gcd(a, b) {
     if (b == 0) {
         //	base	case	(conquer)

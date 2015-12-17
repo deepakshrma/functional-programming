@@ -1,5 +1,5 @@
 /*
- *Find GCD among numbers
+ *Problem: Find GCD among numbers
  */
 function gcd(a, b) {
     if (b == 0) {
