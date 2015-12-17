@@ -313,6 +313,21 @@ e)  Array.prototype.concat
 f)  Array.prototype.reverse 
 g)  Array.prototype.sort    
 h)  Array.prototype.every and Array.prototype.some  
+```js
+/*
+ *Problem: Validate All user in json
+ */
+var Data = require('./../resource/empolyee');
 
+console.log(
+    Data.employees.every(Data.validate)
+)
+/*
+ *Problem: Validate some user in json
+ */
+console.log(
+    Data.employees.some(Data.validate)
+);
+```
 
 
