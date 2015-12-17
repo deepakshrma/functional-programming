@@ -1,3 +1,24 @@
+#Agenda:
+1. Introduction    
+2. Self-invoking functions and closures   
+3. Higher-order functions  
+4. Pure functions 
+5. Anonymous functions  
+6. Method chains  
+7. Recursion   
+8. Divide and conquer   
+9. Lazy evaluation   
+10.   The functional programmer’s toolkit 
+   a) Callbacks   
+   b) Array.prototype.map()   
+   c) Array.prototype.filter()   
+   d) Array.prototype.reduce()   
+   e) Array.prototype.forEach 
+   f) Array.prototype.concat  
+   g) Array.prototype.reverse 
+   h) Array.prototype.sort 
+   i) Array.prototype.every and Array.prototype.some  
+
 ##Introduction
 ####Benefits:
 1.  Functional style are clear.
