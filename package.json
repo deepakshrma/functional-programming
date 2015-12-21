@@ -1,0 +1,23 @@
+{
+  "name": "functional-programming-javascript",
+  "version": "1.0.0",
+  "description": "1. Introduction     2. Self-invoking functions and closures    3. Higher-order functions   4. Pure functions  5. Anonymous functions   6. Method chains   7. Recursion    8. Divide and conquer    9. The functional programmer’s toolkit     a) Array.prototype.map()       b) Array.prototype.filter()       c) Array.prototype.reduce()       d) Array.prototype.forEach     e) Array.prototype.concat      f) Array.prototype.reverse     g) Array.prototype.sort     h) Array.prototype.every and Array.prototype.some",
+  "main": "Q6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakshrma/functional-programming-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakshrma/functional-programming-javascript/issues"
+  },
+  "homepage": "https://github.com/deepakshrma/functional-programming-javascript#readme",
+  "dependencies": {
+    "ramda": "^0.18.0"
+  }
+}
