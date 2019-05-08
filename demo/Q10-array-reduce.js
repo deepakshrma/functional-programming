@@ -4,9 +4,7 @@
 var numbers = [1, 252, 56, 3636, 8, 1, -1];
 
 console.log(
-    numbers.reduce(function (p, n) {
-        return Math.max(p, n);
-    })
+    numbers.reduce((p, n) => Math.max(p, n))
 );
 /*
  *Problem: Highest paid employee
@@ -18,7 +16,5 @@ var employees = [
 ];
 
 console.log(
-    employees.reduce(function (p, n) {
-        return p.salary > n.salary ? p : n;
-    })
+    employees.reduce((p, n) => p.salary > n.salary ? p : n)
 );

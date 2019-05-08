@@ -9,9 +9,6 @@ var emails = [
     'deepak+abc@gmail.in',
 ];
 var emailReg = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
-// Capitalize first character of word in a string.
 console.log(
-    emails.filter(function (s, i) {
-       return emailReg.test(s);
-    })
+    emails.filter(email => emailReg.test(email))
 );

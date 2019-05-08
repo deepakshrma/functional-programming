@@ -49,7 +49,3 @@ exports.employees = [
         "email": "corawolf.deep@namegen.com"
     }
 ]
-var emailReg = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
-exports.validate = function (employee) {
-    return emailReg.test(employee.email) && !isNaN(employee.age);
-}

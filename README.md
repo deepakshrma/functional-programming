@@ -55,11 +55,7 @@ console.log(
 ```
 ####Solution 2: 
 ```js
-function mergeArraysIntoOneF(arrays) {
-   return arrays.reduce(function (prev, next) {
-       return prev.concat(next);
-   })
-}
+const mergeArraysIntoOneF = (arrays) => arrays.reduce((prev, next) => prev.concat(next))
 console.log(
    mergeArraysIntoOneF(
        [
@@ -71,14 +67,6 @@ console.log(
 )
 //output
 //[ 1, 4, 3, 6, 7, 2, 5 ]
-```
-And using functional techniques, it could be written as follows:
-```js
-var varmerge2dArrayIntoOne2 = function(arrays) {
-  return arrays.reduce( function(p,n){
-    return p.concat(n);
-  });
-};
 ```
 ####Is JavaScript a functional programming language?
 **What defines a functional programming language?**   
@@ -270,10 +258,11 @@ a) **Array.prototype.map()**
  */
 var str = 'hello world how ya doing?';
 // Capitalize first character of word in a string.
+String.prototype.kebabCase = function () {
+    return this.split(' ').map( (s, i) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
+}
 console.log(
-    str.split(' ').map(function (s, i) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
-    }).join(' ')
+    str.kebabCase()
 );
 ```
 b) **Array.prototype.filter()**  
@@ -290,9 +279,7 @@ var emails = [
 ];
 var emailReg = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
 console.log(
-    emails.filter(function (s, i) {
-       return emailReg.test(s);
-    })
+    emails.filter(email => emailReg.test(email))
 );
 ```
 c) **Array.prototype.reduce()**  
@@ -303,9 +290,7 @@ c) **Array.prototype.reduce()**
 var numbers = [1, 252, 56, 3636, 8, 1, -1];
 
 console.log(
-    numbers.reduce(function (p, n) {
-        return Math.max(p, n);
-    })
+    numbers.reduce((p, n) => Math.max(p, n))
 );
 /*
  *Problem: Highest paid employee
@@ -317,9 +302,7 @@ var employees = [
 ];
 
 console.log(
-    employees.reduce(function (p, n) {
-        return p.salary > n.salary ? p : n;
-    })
+    employees.reduce((p, n) => p.salary > n.salary ? p : n)
 );
 ```
 d)  Array.prototype.forEach  
@@ -331,16 +314,17 @@ h)  Array.prototype.every and Array.prototype.some
 /*
  *Problem: Validate All user in json
  */
-var Data = require('./../resource/empolyee');
-
+var {employees} = require('./../resource/empolyee');
+var emailReg = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
+const validate =  (employee) => emailReg.test(employee.email) && !isNaN(employee.age)
 console.log(
-    Data.employees.every(Data.validate)
+    employees.every(validate)
 )
 /*
  *Problem: Validate some user in json
  */
 console.log(
-    Data.employees.some(Data.validate)
+    employees.some(validate)
 );
 ```
 
